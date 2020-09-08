@@ -24,8 +24,8 @@ sheet['AE16'] = surname_upper[2]
 sheet['AI16'] = surname_upper[3]
 sheet['AM16'] = surname_upper[4]
 sheet['AQ16'] = surname_upper[5]
-# # sheet['AU16'] = surname_upper[6]
-# # sheet['AY16'] = 'К'
-# # sheet['BC16'] = 'О'
-# #
-   #           wb.save(file_name)
+# sheet['AU16'] = surname_upper[6]
+# sheet['AY16'] = 'К'
+# sheet['BC16'] = 'О'
+#
+wb.save(file_name)
