@@ -14,7 +14,12 @@
     </div>
     <div class="form-group">
         <label for="birthdate_field">Дата рождения</label>
-        <input type="text" class="form-control" id="birthdate_field" name="birthdate" data-date="12-02-2012" data-date-format="dd-mm-yyyy" placeholder="ДД-ММ-ГГГГ">
+        <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
+            <input id="birthdate_field" type="text" class="form-control" placeholder="ДД-ММ-ГГГГ">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="pasport_field">Паспорт</label>

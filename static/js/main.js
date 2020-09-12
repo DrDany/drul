@@ -3,10 +3,9 @@ $('[data-toggle=confirmation]').confirmation({
     //btnOkLabel: 'Si',
     //btnCancelLabel: 'No'
 });
-
-function setDate() {
-        $('.datepicker').datepicker()
-  }
+$( document ).ready(function() {
+    $('#datepicker').datepicker();
+});
 
 function checkForm() {
 
