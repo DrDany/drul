@@ -19,5 +19,5 @@ sheet = wb.get_sheet_by_name('стр.1')
 for letter in range(len(surname)):
     sheet[list[letter]] = surname_upper[letter]
 
-#
+
 wb.save(file_name)
