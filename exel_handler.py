@@ -1,7 +1,7 @@
 from openpyxl import load_workbook
 
 
-def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date, doc_end):
+def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date, doc_end, profession, date_income, region, district, city, street, street_number, flat_number):
     wb = load_workbook('./exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     file_name = surname + '.xlsx'
@@ -18,23 +18,46 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_surname[cell_index_surname].value = char
         cell_index_surname = cell_index_surname + 4
 
+    cells_surname1 = sheet['W71':'FC71'][0]
+    cell_index_surname1 = 0
+    for char in surname_upper:
+        cells_surname1[cell_index_surname1].value = char
+        cell_index_surname1 = cell_index_surname1 + 4
+
     cells_name = sheet['AI18':'FC18'][0]
     cell_index_name = 0
     for char_name in name_upper:
         cells_name[cell_index_name].value = char_name
         cell_index_name = cell_index_name + 4
 
+    cells_name1 = sheet['AI73':'FC73'][0]
+    cell_index_name1 = 0
+    for char_name1 in name_upper:
+        cells_name1[cell_index_name1].value = char_name1
+        cell_index_name1 = cell_index_name1 + 4
+
     # insert birth date
     sheet["AE24"].value = birthdate[0]
     sheet["AI24"].value = birthdate[1]
 
+    sheet["AE79"].value = birthdate[0]
+    sheet["AI79"].value = birthdate[1]
+
     sheet["AU24"].value = birthdate[3]
     sheet["AY24"].value = birthdate[4]
+
+    sheet["AU79"].value = birthdate[3]
+    sheet["AY79"].value = birthdate[4]
 
     sheet["BG24"].value = birthdate[6]
     sheet["BK24"].value = birthdate[7]
     sheet["BO24"].value = birthdate[8]
     sheet["BS24"].value = birthdate[9]
+
+    sheet["BG79"].value = birthdate[6]
+    sheet["BK79"].value = birthdate[7]
+    sheet["BO79"].value = birthdate[8]
+    sheet["BS79"].value = birthdate[9]
 
     # insert pasport
 
@@ -46,6 +69,12 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
     for char in citizen_upper:
         cells_citizen[cell_index_citizen].value = char
         cell_index_citizen = cell_index_citizen + 4
+
+    cells_citizen1 = sheet['AA76':'FC76'][0]
+    cell_index_citizen1 = 0
+    for char in citizen_upper:
+        cells_citizen1[cell_index_citizen1].value = char
+        cell_index_citizen1 = cell_index_citizen1 + 4
 
     # insert birth place
     birth_place_upper = birth_place.upper()
@@ -74,6 +103,12 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_doc_type[cell_index_doc_type].value = char
         cell_index_doc_type = cell_index_doc_type + 4
 
+    cells_doc_type1 = sheet['BC82':'CQ82'][0]
+    cell_index_doc_type1 = 0
+    for char in doc_type_upper:
+        cells_doc_type1[cell_index_doc_type1].value = char
+        cell_index_doc_type1 = cell_index_doc_type1 + 4
+
     # insert seria and number
     cells_doc_seria = sheet['DC33':'DO33'][0]
     cell_index_doc_seria = 0
@@ -81,11 +116,24 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_doc_seria[cell_index_doc_seria].value = char
         cell_index_doc_seria = cell_index_doc_seria + 4
 
+    # insert seria and number
+    cells_doc_seria1 = sheet['DC82':'DO82'][0]
+    cell_index_doc_seria1 = 0
+    for char in doc_seria:
+        cells_doc_seria1[cell_index_doc_seria1].value = char
+        cell_index_doc_seria1 = cell_index_doc_seria1 + 4
+
     cells_doc_number = sheet['DW33':'FC33'][0]
     cell_index_doc_number = 0
     for char in doc_number:
         cells_doc_number[cell_index_doc_number].value = char
         cell_index_doc_number = cell_index_doc_number + 4
+
+    cells_doc_number1 = sheet['DW82':'FC82'][0]
+    cell_index_doc_number1 = 0
+    for char in doc_number:
+        cells_doc_number1[cell_index_doc_number1].value = char
+        cell_index_doc_number1 = cell_index_doc_number1 + 4
 
     # if len(surname) > 35:
     #     raise Exception('Surname is long')
@@ -128,6 +176,79 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
     sheet["DS35"].value = doc_end[7]
     sheet["DW35"].value = doc_end[8]
     sheet["EA35"].value = doc_end[9]
+
+    # insert profession
+    profession_upper = profession.upper()
+
+    cells_profession_upper = sheet['AA48':'DK48'][0]
+    cell_index_profession = 0
+    for char in profession_upper:
+        cells_profession_upper[cell_index_profession].value = char
+        cell_index_profession = cell_index_profession + 4
+
+
+    # insert income date
+    sheet["AI50"].value = date_income[0]
+    sheet["AM50"].value = date_income[1]
+
+    sheet["AY50"].value = date_income[3]
+    sheet["BC50"].value = date_income[4]
+
+    sheet["BK50"].value = date_income[6]
+    sheet["BO50"].value = date_income[7]
+    sheet["BS50"].value = date_income[8]
+    sheet["BW50"].value = date_income[9]
+
+    region_upper = region.upper()
+
+    cells_region_upper = sheet['AQ85':'FC85'][0]
+    cell_index_region = 0
+    for char in region_upper:
+        cells_region_upper[cell_index_region].value = char
+        cell_index_region = cell_index_region + 4
+    #
+    district_upper = district.upper()
+
+    cells_district_upper = sheet['W88':'FC88'][0]
+    cell_index_district = 0
+    for char in district_upper:
+        cells_district_upper[cell_index_district].value = char
+        cell_index_district = cell_index_district + 4
+
+    city_upper = city.upper()
+
+    cells_city_upper = sheet['AE90':'FC90'][0]
+    cell_index_city = 0
+    for char in city_upper:
+        cells_city_upper[cell_index_city].value = char
+        cell_index_city = cell_index_city + 4
+
+    street_upper = street.upper()
+
+    cells_street_upper = sheet['W93':'FC93'][0]
+    cell_index_street = 0
+    for char in street_upper:
+        cells_street_upper[cell_index_street].value = char
+        cell_index_street = cell_index_street + 4
+
+    cells_street_number = sheet['AI95':'FC95'][0]
+    cell_index_street_number = 0
+    for char in street_number:
+        cells_street_number[cell_index_street_number].value = char
+        cell_index_street_number = cell_index_street_number + 4
+
+    cells_float_number = sheet['EM95':'FC95'][0]
+    cell_index_flat_number = 0
+    for char in flat_number:
+        cells_float_number[cell_index_flat_number].value = char
+        cell_index_flat_number = cell_index_flat_number + 4
+
+
+
+
+
+
+
 
     wb.save(file_name)
 
