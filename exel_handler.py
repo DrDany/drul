@@ -1,10 +1,14 @@
 from openpyxl import load_workbook
+import datetime
 
 
-def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date, doc_end, profession, date_income, region, district, city, street, street_number, flat_number):
+def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date,
+                 doc_end, profession, date_income, region, district, city, street, street_number, flat_number):
     wb = load_workbook('./exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
-    file_name = surname + '.xlsx'
+    one_year_from_now = datetime.datetime.now()
+    date_formated = one_year_from_now.strftime("%d-%m-%Y")
+    file_name = surname + ' ' + date_formated + '.xlsx'
 
     if len(surname) > 35:
         raise Exception('Surname is long')
@@ -186,7 +190,6 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_profession_upper[cell_index_profession].value = char
         cell_index_profession = cell_index_profession + 4
 
-
     # insert income date
     sheet["AI50"].value = date_income[0]
     sheet["AM50"].value = date_income[1]
@@ -243,21 +246,4 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_float_number[cell_index_flat_number].value = char
         cell_index_flat_number = cell_index_flat_number + 4
 
-
-
-
-
-
-
-
     wb.save(file_name)
-
-
-
-
-
-
-
-
-
-
