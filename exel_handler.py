@@ -3,9 +3,11 @@ import datetime
 
 
 def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date,
-                 doc_end, profession, date_income, region, district, city, street, street_number, flat_number):
+                 doc_end, profession, date_income, region, district, city, street, street_number, flat_number, gender,
+                 mig_card_ser, mig_card_number, mig_card_region, mig_card_city):
     wb = load_workbook('./exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
+    sheet2 = wb.get_sheet_by_name('стр.2')
     one_year_from_now = datetime.datetime.now()
     date_formated = one_year_from_now.strftime("%d-%m-%Y")
     file_name = surname + ' ' + date_formated + '.xlsx'
@@ -15,6 +17,12 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
 
     surname_upper = surname.upper()
     name_upper = name.upper()
+
+    if gender == "female":
+        sheet['DS24'] = 'X'
+
+    else:
+        sheet['CY24'] = 'X'
 
     cells_surname = sheet['W16':'FC16'][0]
     cell_index_surname = 0
@@ -139,6 +147,30 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_doc_number1[cell_index_doc_number1].value = char
         cell_index_doc_number1 = cell_index_doc_number1 + 4
 
+    cells_mig_card_ser = sheet['AQ52':'BC52'][0]
+    cell_index_mig_card_ser = 0
+    for char in mig_card_ser:
+        cells_mig_card_ser[cell_index_mig_card_ser].value = char
+        cell_index_mig_card_ser = cell_index_mig_card_ser + 4
+
+    cells_mig_card_number = sheet['BK52':'CY52'][0]
+    cell_index_mig_card_number = 0
+    for char in mig_card_number:
+        cells_mig_card_number[cell_index_mig_card_number].value = char
+        cell_index_mig_card_number = cell_index_mig_card_number + 4
+
+    cells_mig_card_region = sheet['AA60':'CU60'][0]
+    cell_index_mig_card_region = 0
+    for char in mig_card_region:
+        cells_mig_card_region[cell_index_mig_card_region].value = char
+        cell_index_mig_card_region = cell_index_mig_card_region + 4
+
+    cells_mig_card_city = sheet['AA62':'CU62'][0]
+    cell_index_mig_card_city = 0
+    for char in mig_card_city:
+        cells_mig_card_city[cell_index_mig_card_city].value = char
+        cell_index_mig_card_city = cell_index_mig_card_city + 4
+
     # if len(surname) > 35:
     #     raise Exception('Surname is long')
     #
@@ -245,5 +277,87 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
     for char in flat_number:
         cells_float_number[cell_index_flat_number].value = char
         cell_index_flat_number = cell_index_flat_number + 4
+
+
+
+
+    # сведения о месте пребывания
+
+    cells_region_upper = sheet2['AQ14':'FC14'][0]
+    cell_index_region = 0
+    for char in region_upper:
+        cells_region_upper[cell_index_region].value = char
+        cell_index_region = cell_index_region + 4
+
+    cells_district_upper = sheet2['W17':'FC17'][0]
+    cell_index_district = 0
+    for char in district_upper:
+        cells_district_upper[cell_index_district].value = char
+        cell_index_district = cell_index_district + 4
+
+    cells_city_upper = sheet2['AE19':'FC19'][0]
+    cell_index_city = 0
+    for char in city_upper:
+        cells_city_upper[cell_index_city].value = char
+        cell_index_city = cell_index_city + 4
+
+    cells_street_upper = sheet2['W22':'FC22'][0]
+    cell_index_street = 0
+    for char in street_upper:
+        cells_street_upper[cell_index_street].value = char
+        cell_index_street = cell_index_street + 4
+
+    cells_street_number = sheet2['AQ24':'BS24'][0]
+    cell_index_street_number = 0
+    for char in street_number:
+        cells_street_number[cell_index_street_number].value = char
+        cell_index_street_number = cell_index_street_number + 4
+
+    cells_float_number = sheet2['EQ24':'FC24'][0]
+    cell_index_flat_number = 0
+    for char in flat_number:
+        cells_float_number[cell_index_flat_number].value = char
+        cell_index_flat_number = cell_index_flat_number + 4
+
+
+    # Сведения о принимающей стороне
+    #
+    cells_region_upper = sheet2['AQ41':'FC41'][0]
+    cell_index_region = 0
+    for char in region_upper:
+        cells_region_upper[cell_index_region].value = char
+        cell_index_region = cell_index_region + 4
+
+    cells_district_upper = sheet2['W44':'FC44'][0]
+    cell_index_district = 0
+    for char in district_upper:
+        cells_district_upper[cell_index_district].value = char
+        cell_index_district = cell_index_district + 4
+
+    cells_city_upper = sheet2['AE46':'FC46'][0]
+    cell_index_city = 0
+    for char in city_upper:
+        cells_city_upper[cell_index_city].value = char
+        cell_index_city = cell_index_city + 4
+
+    cells_street_upper = sheet2['W49':'FC49'][0]
+    cell_index_street = 0
+    for char in street_upper:
+        cells_street_upper[cell_index_street].value = char
+        cell_index_street = cell_index_street + 4
+    #
+    cells_street_number = sheet2['S51':'AE51'][0]
+    cell_index_street_number = 0
+    for char in street_number:
+        cells_street_number[cell_index_street_number].value = char
+        cell_index_street_number = cell_index_street_number + 4
+    #
+    cells_float_number = sheet2['CM51':'CY51'][0]
+    cell_index_flat_number = 0
+    for char in flat_number:
+        cells_float_number[cell_index_flat_number].value = char
+        cell_index_flat_number = cell_index_flat_number + 4
+
+
 
     wb.save(file_name)

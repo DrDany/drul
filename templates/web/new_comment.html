@@ -3,7 +3,7 @@
 {% block body %}
 <h1>Бланк</h1>
 <form action="{{ url_for('comment') }}" method="POST" onSubmit="return checkForm()">
-    <h3>Новый Excel</h3>
+    <h3>1. СВЕДЕНИЯ О ЛИЦЕ, ПОДЛЕЖАЩЕМ ПОСТАНОВКЕ НА УЧЕТ ПО МЕСТУ ПРЕБЫВАНИЯ</h3>
     <div class="form-group">
         <label for="surname_field">Фамилия</label>
         <input type="text" class="form-control" id="surname_field" name="surname">
@@ -25,6 +25,15 @@
             </div>
         </div>
     </div>
+
+    <div class="form-group">
+        <label for="birth_place_field">Пол</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Муж</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Жен</label><br>
+    </div>
+
     <div class="form-group">
         <label for="birth_place_field">Место рождения</label>
         <input type="text" class="form-control" id="birth_place_field" name="birth_place">
@@ -33,6 +42,10 @@
         <label for="birth_city_field">Город роождения</label>
         <input type="text" class="form-control" id="birth_city_field" name="birth_city">
     </div>
+
+
+    <h3>Документ удостоверяющий личность</h3>
+
     <div class="form-group">
         <label for="doc_type_field">Документ удостоверяющий личность</label>
         <input type="text" class="form-control" id="doc_type_field" name="doc_type">
@@ -83,7 +96,33 @@
         </div>
     </div>
 
-    <h3>куда прибыл</h3>
+    <h3>Миграционная карта</h3>
+
+    <div class="form-group">
+        <label for="mig_card_ser_field">Серия</label>
+        <input type="text" class="form-control" id="mig_card_ser_field" name="mig_card_ser">
+    </div>
+
+
+    <div class="form-group">
+        <label for="mig_card_number_field">Номер</label>
+        <input type="text" class="form-control" id="mig_card_number_field" name="mig_card_number">
+    </div>
+
+
+    <div class="form-group">
+        <label for="mig_card_region_field">Город </label>
+        <input type="text" class="form-control" id="mig_card_region_field" name="mig_card_region">
+    </div>
+
+    <div class="form-group">
+        <label for="mig_card_city_field">Улица с номером</label>
+        <input type="text" class="form-control" id="mig_card_city_field" name="mig_card_city">
+    </div>
+
+
+
+    <h3>Куда прибыл</h3>
 
     <div class="form-group">
         <label for="region_field">Область, край, республика, </label>
@@ -115,8 +154,15 @@
         <input type="text" class="form-control" id="flat_number_field" name="flat_number">
     </div>
 
-
-
+<!--    <h3>2. СВЕДЕНИЯ О ПРИНИМАЩЕЙ СТОРОНЕ</h3>-->
+<!--    <div class="form-group">-->
+<!--        <label for="surname_host_field">Фамилия</label>-->
+<!--        <input type="text" class="form-control" id="surname_host_field" name="surname_host">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label for="name_host_field">Имя Отчество (Через пробел)</label>-->
+<!--        <input type="text" class="form-control" id="name_host_field" name="name_host">-->
+<!--    </div>-->
 
 
     <!--         <div class="form-group">-->
