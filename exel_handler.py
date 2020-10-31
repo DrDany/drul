@@ -190,16 +190,16 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
     #     cell_index_name = cell_index_name + 4
 
     # insert document start date
-    sheet["AA35"].value = doc_end[0]
-    sheet["AE35"].value = doc_end[1]
+    sheet["AA35"].value = doc_date[0]
+    sheet["AE35"].value = doc_date[1]
 
-    sheet["AQ35"].value = doc_end[3]
-    sheet["AU35"].value = doc_end[4]
+    sheet["AQ35"].value = doc_date[3]
+    sheet["AU35"].value = doc_date[4]
 
-    sheet["BC35"].value = doc_end[6]
-    sheet["BG35"].value = doc_end[7]
-    sheet["BK35"].value = doc_end[8]
-    sheet["BO35"].value = doc_end[9]
+    sheet["BC35"].value = doc_date[6]
+    sheet["BG35"].value = doc_date[7]
+    sheet["BK35"].value = doc_date[8]
+    sheet["BO35"].value = doc_date[9]
 
     # insert document end date
     sheet["CM35"].value = doc_end[0]
