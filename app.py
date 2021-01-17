@@ -40,12 +40,16 @@ def comment():
         mig_card_region = request.form["mig_card_region"]
         mig_card_city = request.form["mig_card_city"]
         mig_card_street_number = request.form["mig_card_street_number"]
-        # surname_host = request.form["surname_host"]
-        # name_host = request.form["name_host"]
+        surname_host = request.form["surname_host"]
+        name_host = request.form["name_host"]
+        date_host_birth = request.form["date_host_birth"]
+        host_doc_seria = request.form["host_doc_seria"]
+        host_doc_number = request.form["host_doc_number"]
+        date_host_pass = request.form["date_host_pass"]
         exel_handler.add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria,
                                   doc_number, doc_date, doc_end, profession, date_income, region, district, city,
                                   street, street_number, flat_number, gender, mig_card_ser, mig_card_number,
-                                  mig_card_region, mig_card_city, mig_card_street_number)
+                                  mig_card_region, mig_card_city, mig_card_street_number, surname_host, name_host, date_host_birth, host_doc_seria, host_doc_number, date_host_pass)
         return redirect(url_for('comment'))
 
 

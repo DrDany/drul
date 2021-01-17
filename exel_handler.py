@@ -4,7 +4,7 @@ import datetime
 
 def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date,
                  doc_end, profession, date_income, region, district, city, street, street_number, flat_number, gender,
-                 mig_card_ser, mig_card_number, mig_card_region, mig_card_city, mig_card_street_number):
+                 mig_card_ser, mig_card_number, mig_card_region, mig_card_city, mig_card_street_number, surname_host, name_host, date_host_birth, host_doc_seria, host_doc_number, date_host_pass):
     wb = load_workbook('./exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -366,6 +366,69 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
         cells_float_number[cell_index_flat_number].value = char
         cell_index_flat_number = cell_index_flat_number + 4
 
+
+    cells_name_host = sheet2['AI33':'FC33'][0]
+    cell_index_name_host = 0
+    for char in name_host:
+        cells_name_host[cell_index_name_host].value = char
+        cell_index_name_host = cell_index_name_host + 4
+
+    cells_name_host1 = sheet2['AI80':'FC80'][0]
+    cell_index_name_host1 = 0
+    for char1 in name_host:
+        cells_name_host1[cell_index_name_host1].value = char1
+        cell_index_name_host1 = cell_index_name_host1 + 4
+
+    cells_surname_host = sheet2['W30':'CQ30'][0]
+    cell_index_surname_host = 0
+    for char in surname_host:
+        cells_surname_host[cell_index_surname_host].value = char
+        cell_index_surname_host = cell_index_surname_host + 4
+
+    cells_surname_host1 = sheet2['W78':'FC78'][0]
+    cell_index_surname_host1 = 0
+    for char1 in surname_host:
+        cells_surname_host1[cell_index_surname_host1].value = char1
+        cell_index_surname_host1 = cell_index_surname_host1 + 4
+
+        # insert birth date
+    sheet2["DO30"].value = date_host_birth[0]
+    sheet2["DS30"].value = date_host_birth[1]
+
+    sheet2["EE30"].value = date_host_birth[3]
+    sheet2["EI30"].value = date_host_birth[4]
+
+    sheet2["EQ30"].value = date_host_birth[6]
+    sheet2["EU30"].value = date_host_birth[7]
+    sheet2["EY30"].value = date_host_birth[8]
+    sheet2["FC30"].value = date_host_birth[9]
+
+    # insert seria and number
+    cells_host_doc_seria = sheet2['DC36':'DO36'][0]
+    cell_index_host_doc_seria = 0
+    for char in host_doc_seria:
+        cells_host_doc_seria[cell_index_host_doc_seria].value = char
+        cell_index_host_doc_seria = cell_index_host_doc_seria + 4
+
+
+
+    cells_host_doc_number = sheet2['DW36':'FC36'][0]
+    cell_index_host_doc_number = 0
+    for char in host_doc_number:
+        cells_host_doc_number[cell_index_host_doc_number].value = char
+        cell_index_host_doc_number = cell_index_host_doc_number + 4
+
+        # insert date pasport
+    sheet2["AA38"].value = date_host_pass[0]
+    sheet2["AE38"].value = date_host_pass[1]
+
+    sheet2["AQ38"].value = date_host_pass[3]
+    sheet2["AU38"].value = date_host_pass[4]
+
+    sheet2["BC38"].value = date_host_pass[6]
+    sheet2["BG38"].value = date_host_pass[7]
+    sheet2["BK38"].value = date_host_pass[8]
+    sheet2["BO38"].value = date_host_pass[9]
 
 
     wb.save(file_name)
