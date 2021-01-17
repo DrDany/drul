@@ -4,7 +4,7 @@ import datetime
 
 def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc_type, doc_seria, doc_number, doc_date,
                  doc_end, profession, date_income, region, district, city, street, street_number, flat_number, gender,
-                 mig_card_ser, mig_card_number, mig_card_region, mig_card_city):
+                 mig_card_ser, mig_card_number, mig_card_region, mig_card_city, mig_card_street_number):
     wb = load_workbook('./exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -20,9 +20,11 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
 
     if gender == "female":
         sheet['DS24'] = 'X'
+        sheet['DW79'] = 'X'
 
     else:
         sheet['CY24'] = 'X'
+        sheet['DC79'] = 'X'
 
     cells_surname = sheet['W16':'FC16'][0]
     cell_index_surname = 0
@@ -170,6 +172,12 @@ def add_new_exel(surname, name, birthdate, citizen, birth_place, birth_city, doc
     for char in mig_card_city:
         cells_mig_card_city[cell_index_mig_card_city].value = char
         cell_index_mig_card_city = cell_index_mig_card_city + 4
+
+    cells_mig_card_street_number = sheet['AA64':'CU64'][0]
+    cell_index_mig_card_street_number = 0
+    for char in mig_card_street_number:
+        cells_mig_card_street_number[cell_index_mig_card_street_number].value = char
+        cell_index_mig_card_street_number = cell_index_mig_card_street_number + 4
 
     # if len(surname) > 35:
     #     raise Exception('Surname is long')
