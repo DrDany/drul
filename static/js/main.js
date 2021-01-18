@@ -1,53 +1,16 @@
-$('[data-toggle=confirmation]').confirmation({
-    rootSelector: '[data-toggle=confirmation]'
-    //btnOkLabel: 'Si',
-    //btnCancelLabel: 'No'
-});
-$( document ).ready(function() {
-    $('#datepicker').datepicker();
-});
+function checkForm(event) {
+    event.preventDefault();
 
-function checkForm() {
+    const surnameField = $("#surname_field");
+     const name_field = $("#name_field");
 
-    var surnameField = $("#surname_field");
-    var nameField = $("#name_field");
-    var commentFiled = $("#comment_field");
-    var emailField = $("#email_filed");
-    var phoneFiled = $("#phone_field");
-
-    var emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var phonePattern = /^[(]\d{1,6}[)]\d{7,9}/;
-    var isEmail = emailPattern.test(emailField.val());
-    var isCorrectPhone = phonePattern.test(phoneFiled.val());
-
-    if (isEmail) {
-        emailField.removeClass("invalid");
-    } else {
-        emailField.addClass("invalid");
-    }
-
-    if (isCorrectPhone) {
-        phoneFiled.removeClass("invalid");
-    } else {
-        phoneFiled.addClass("invalid");
-    }
 
     if (surnameField.val() === "") {
         surnameField.addClass("invalid");
     } else {
         surnameField.removeClass("invalid");
     }
-    if (nameField.val() === "") {
-        nameField.addClass("invalid");
-    } else {
-        nameField.removeClass("invalid");
-    }
-
-    if (commentFiled.val() === "") {
-        commentFiled.addClass("invalid");
-        return false;
-    } else {
-        commentFiled.removeClass("invalid");
-    }
-    return true;
 }
+
+const form = document.querySelector("#form");
+form.addEventListener('submit', checkForm);
