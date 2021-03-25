@@ -19,6 +19,7 @@ def comment():
         birthdate = request.form["birthdate"]
         patranomic = request.form["patranomic"]
         citizen = request.form["citizen"]
+        gender = request.form["gender"]
         # birth_place = request.form["birth_place"]
         # birth_city = request.form["birth_city"]
         # doc_type = request.form["doc_type"]
@@ -34,7 +35,7 @@ def comment():
         # street = request.form["street"]
         # street_number = request.form["street_number"]
         # flat_number = request.form["flat_number"]
-        # gender = request.form["gender"]
+
         # mig_card_ser = request.form["mig_card_ser"]
         # mig_card_number = request.form["mig_card_number"]
         # mig_card_region = request.form["mig_card_region"]
@@ -46,7 +47,7 @@ def comment():
         # host_doc_seria = request.form["host_doc_seria"]
         # host_doc_number = request.form["host_doc_number"]
         # date_host_pass = request.form["date_host_pass"]
-        exel_handler.add_new_exel(surname, name, patranomic, citizen, birthdate )
+        exel_handler.add_new_exel(surname, name, patranomic, citizen, birthdate, gender)
         return redirect(url_for('comment'))
 
 

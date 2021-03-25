@@ -9,7 +9,7 @@ def input_cell(page,start_cell, end_cell, word):
         cell_index = cell_index + 4
 
 
-def add_new_exel(surname, name, patranomic, citizen, birthdate):
+def add_new_exel(surname, name, patranomic, citizen, birthdate, gender):
     wb = load_workbook('exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -33,8 +33,10 @@ def add_new_exel(surname, name, patranomic, citizen, birthdate):
     input_cell(sheet, 'Z15', 'DN15', patranomic)
     input_cell(sheet3, 'AH35', 'DN35', patranomic)
 
-    input_cell(sheet, 'Z15', 'DN15', citizen)
-    input_cell(sheet3, 'AH35', 'DN35', citizen)
+    input_cell(sheet, 'V17', 'DN17', citizen)
+    input_cell(sheet, 'Z22', 'DN22', citizen)
+    input_cell(sheet3, 'R37', 'DN37', citizen)
+    input_cell(sheet3, 'Z41', 'DN41', citizen)
 
     # birthdate
     # insert birth date
@@ -58,7 +60,16 @@ def add_new_exel(surname, name, patranomic, citizen, birthdate):
     sheet3["BC39"].value = birthdate[6]
     sheet3["BG39"].value = birthdate[7]
     sheet3["BK39"].value = birthdate[8]
-    sheet3["BO30"].value = birthdate[9]
+    sheet3["BO39"].value = birthdate[9]
+
+
+    if gender == "female":
+        sheet['DB20'] = 'X'
+        sheet3['DB39'] = 'X'
+
+    else:
+        sheet['CL20'] = 'X'
+        sheet3['CL39'] = 'X'
 
 
 
