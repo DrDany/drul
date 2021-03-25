@@ -37,7 +37,28 @@ def add_new_exel(surname, name, patranomic, citizen, birthdate):
     input_cell(sheet3, 'AH35', 'DN35', citizen)
 
     # birthdate
+    # insert birth date
+    sheet["AD20"].value = birthdate[0]
+    sheet["AH20"].value = birthdate[1]
 
+    sheet3["AA39"].value = birthdate[0]
+    sheet3["AE39"].value = birthdate[1]
+    # month
+    sheet["AT20"].value = birthdate[3]
+    sheet["AX20"].value = birthdate[4]
+
+    sheet3["AQ39"].value = birthdate[3]
+    sheet3["AU39"].value = birthdate[4]
+
+    sheet["BF20"].value = birthdate[6]
+    sheet["BJ20"].value = birthdate[7]
+    sheet["BN20"].value = birthdate[8]
+    sheet["BR20"].value = birthdate[9]
+
+    sheet3["BC39"].value = birthdate[6]
+    sheet3["BG39"].value = birthdate[7]
+    sheet3["BK39"].value = birthdate[8]
+    sheet3["BO30"].value = birthdate[9]
 
 
 
