@@ -23,12 +23,12 @@ def comment():
         # birth_place = request.form["birth_place"]
         # birth_city = request.form["birth_city"]
         # doc_type = request.form["doc_type"]
-        # doc_seria = request.form["doc_seria"]
-        # doc_number = request.form["doc_number"]
-        # doc_date = request.form["doc_date"]
-        # doc_end = request.form["doc_end"]
-        # profession = request.form["profession"]
-        # date_income = request.form["date_income"]
+        doc_seria = request.form["doc_seria"]
+        doc_number = request.form["doc_number"]
+        doc_date = request.form["doc_date"]
+        doc_end = request.form["doc_end"]
+        profession = request.form["profession"]
+        date_income = request.form["date_income"]
         # region = request.form["region"]
         # city = request.form["city"]
         # district = request.form["district"]
@@ -36,8 +36,8 @@ def comment():
         # street_number = request.form["street_number"]
         # flat_number = request.form["flat_number"]
 
-        # mig_card_ser = request.form["mig_card_ser"]
-        # mig_card_number = request.form["mig_card_number"]
+        mig_card_ser = request.form["mig_card_ser"]
+        mig_card_number = request.form["mig_card_number"]
         # mig_card_region = request.form["mig_card_region"]
         # mig_card_city = request.form["mig_card_city"]
         # mig_card_street_number = request.form["mig_card_street_number"]
@@ -47,7 +47,7 @@ def comment():
         # host_doc_seria = request.form["host_doc_seria"]
         # host_doc_number = request.form["host_doc_number"]
         # date_host_pass = request.form["date_host_pass"]
-        exel_handler.add_new_exel(surname, name, patranomic, citizen, birthdate, gender)
+        exel_handler.add_new_exel(surname, name, patranomic, citizen, birthdate, gender, doc_seria, doc_number, doc_date, doc_end, profession, date_income, mig_card_ser, mig_card_number)
         return redirect(url_for('comment'))
 
 

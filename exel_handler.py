@@ -1,7 +1,9 @@
+# coding=utf-8
 from openpyxl import load_workbook
 import datetime
 
-def input_cell(page,start_cell, end_cell, word):
+
+def input_cell(page, start_cell, end_cell, word):
     cell_index = 0
     cells = page[start_cell:end_cell][0]
     for char in word:
@@ -9,7 +11,7 @@ def input_cell(page,start_cell, end_cell, word):
         cell_index = cell_index + 4
 
 
-def add_new_exel(surname, name, patranomic, citizen, birthdate, gender):
+def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', gender='', doc_seria='', doc_number='', doc_date='', doc_end='', profession='', date_income='', mig_card_ser='', mig_card_number=''):
     wb = load_workbook('exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -62,7 +64,6 @@ def add_new_exel(surname, name, patranomic, citizen, birthdate, gender):
     sheet3["BK39"].value = birthdate[8]
     sheet3["BO39"].value = birthdate[9]
 
-
     if gender == "female":
         sheet['DB20'] = 'X'
         sheet3['DB39'] = 'X'
@@ -70,6 +71,67 @@ def add_new_exel(surname, name, patranomic, citizen, birthdate, gender):
     else:
         sheet['CL20'] = 'X'
         sheet3['CL39'] = 'X'
+
+    # document
+
+    input_cell(sheet, 'BF28', 'BR28', doc_seria)
+    input_cell(sheet3, 'BF47', 'BR47', doc_seria)
+
+    input_cell(sheet, 'BZ28', 'DN28', doc_number)
+    input_cell(sheet3, 'BZ47', 'DN47', doc_number)
+
+    # doc_date
+    sheet["I30"].value = doc_date[0]
+    sheet["M30"].value = doc_date[1]
+
+    sheet3["I49"].value = doc_date[0]
+    sheet3["M49"].value = doc_date[1]
+    # month
+    sheet["AT30"].value = doc_date[3]
+    sheet["AX30"].value = doc_date[4]
+
+    sheet3["Z49"].value = doc_date[3]
+    sheet3["AD49"].value = doc_date[4]
+
+    sheet["BF30"].value = doc_date[6]
+    sheet["BJ30"].value = doc_date[7]
+    sheet["BN30"].value = doc_date[8]
+    sheet["BR30"].value = doc_date[9]
+
+    # sheet3["AL49"].value = doc_date[6]
+    # sheet3["BG39"].value = doc_date[7]
+    # sheet3["BK39"].value = doc_date[8]
+    # sheet3["BO39"].value = doc_date[9]
+
+    # doc_end
+
+    sheet["BN30"].value = doc_end[0]
+    sheet["BR30"].value = doc_end[1]
+
+    sheet3["BN49"].value = doc_end[0]
+    sheet3["BR49"].value = doc_end[1]
+    # month
+    sheet["CD30"].value = doc_end[3]
+    sheet["CH3030"].value = doc_end[4]
+
+    sheet3["CD49"].value = doc_end[3]
+    sheet3["CH49"].value = doc_end[4]
+    #
+    # sheet["BF30"].value = doc_end[6]
+    # sheet["BJ30"].value = doc_end[7]
+    # sheet["BN30"].value = doc_end[8]
+    # sheet["BR30"].value = doc_end[9]
+
+    input_cell(sheet, 'R44', 'DN44', profession)
+
+    sheet["I46"].value = date_income[0]
+    sheet["M46"].value = date_income[1]
+
+    sheet["Z46"].value = date_income[3]
+    sheet["AD46"].value = date_income[4]
+
+    input_cell(sheet, 'AP48', 'BB48', mig_card_ser)
+    input_cell(sheet, 'BJ48', 'CX48', mig_card_number)
 
 
 

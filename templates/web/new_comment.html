@@ -51,71 +51,73 @@
 {#        </div>#}
 {##}
 {##}
-{#        <h3>Документ удостоверяющий личность</h3>#}
+
+
+      <h3>Документ удостоверяющий личность</h3>
+
+<!--      <div class="form-group">-->
+<!--          <label for="doc_type_field">Документ удостоверяющий личность</label>-->
+<!--          <input type="text" class="form-control" id="doc_type_field" name="doc_type">-->
+<!--      </div>-->
+
+      <div class="form-group">
+          <label for="doc_seria_field">Серия</label>
+          <input type="text" class="form-control" id="doc_seria_field" name="doc_seria">
+      </div>
+
+      <div class="form-group">
+          <label for="doc_number_field">Номер</label>
+      <input type="text" class="form-control" id="doc_number_field" name="doc_number">
+  </div>
+
+      <div class="form-group">
+          <label for="doc_date_field">Дата выдачи документа</label>
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
+              <input id="doc_date_field" type="text" class="form-control" name="doc_date" placeholder="ДД-ММ-ГГГГ">#}
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>#}
+          </div>#}
+      </div>#}
+
+      <div class="form-group">#}
+          <label for="doc_end_field">Действителен ДО</label>#}
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
+              <input id="doc_end_field" type="text" class="form-control" name="doc_end" placeholder="ДД-ММ-ГГГГ">#}
+              <div class="input-group-addon">#}
+                  <span class="glyphicon glyphicon-th"></span>#}
+              </div>#}
+          </div>
+      </div>
+
+     <div class="form-group">#}
+         <label for="profession_field">Профессия</label>#}
+         <input type="text" class="form-control" id="profession_field" name="profession">#}
+     </div>#}
+
+      <div class="form-group">#}
+          <label for="date_income_field">Дата въезда</label>#}
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
+              <input id="date_income_field" type="text" class="form-control" name="date_income"#}
+                     placeholder="ДД-ММ-ГГГГ">#}
+              <div class="input-group-addon">#}
+                  <span class="glyphicon glyphicon-th"></span>#}
+              </div>#}
+          </div>#}
+      </div>#}
 {##}
-{#        <div class="form-group">#}
-{#            <label for="doc_type_field">Документ удостоверяющий личность</label>#}
-{#            <input type="text" class="form-control" id="doc_type_field" name="doc_type">#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="doc_seria_field">Серия</label>#}
-{#            <input type="text" class="form-control" id="doc_seria_field" name="doc_seria">#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="doc_number_field">Номер</label>#}
-{#            <input type="text" class="form-control" id="doc_number_field" name="doc_number">#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="doc_date_field">Дата выдачи документа</label>#}
-{#            <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-{#                <input id="doc_date_field" type="text" class="form-control" name="doc_date" placeholder="ДД-ММ-ГГГГ">#}
-{#                <div class="input-group-addon">#}
-{#                    <span class="glyphicon glyphicon-th"></span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="doc_end_field">Действителен ДО</label>#}
-{#            <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-{#                <input id="doc_end_field" type="text" class="form-control" name="doc_end" placeholder="ДД-ММ-ГГГГ">#}
-{#                <div class="input-group-addon">#}
-{#                    <span class="glyphicon glyphicon-th"></span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="profession_field">Профессия</label>#}
-{#            <input type="text" class="form-control" id="profession_field" name="profession">#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="date_income_field">Дата въезда</label>#}
-{#            <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-{#                <input id="date_income_field" type="text" class="form-control" name="date_income"#}
-{#                       placeholder="ДД-ММ-ГГГГ">#}
-{#                <div class="input-group-addon">#}
-{#                    <span class="glyphicon glyphicon-th"></span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <h3>Миграционная карта</h3>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="mig_card_ser_field">Серия</label>#}
-{#            <input type="text" class="form-control" id="mig_card_ser_field" name="mig_card_ser">#}
-{#        </div>#}
-{##}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="mig_card_number_field">Номер</label>#}
-{#            <input type="text" class="form-control" id="mig_card_number_field" name="mig_card_number">#}
-{#        </div>#}
+      <h3>Миграционная карта</h3>#}
+
+      <div class="form-group">#}
+          <label for="mig_card_ser_field">Серия</label>#}
+          <input type="text" class="form-control" id="mig_card_ser_field" name="mig_card_ser">#}
+      </div>#}
+
+
+      <div class="form-group">#}
+          <label for="mig_card_number_field">Номер</label>#}
+          <input type="text" class="form-control" id="mig_card_number_field" name="mig_card_number">#}
+      </div>#}
 {##}
 {##}
 {#        <div class="form-group">#}
