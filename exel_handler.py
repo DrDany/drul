@@ -9,7 +9,7 @@ def input_cell(page,start_cell, end_cell, word):
         cell_index = cell_index + 4
 
 
-def add_new_exel(surname, name, patranomic):
+def add_new_exel(surname, name, patranomic, citizen, birthdate):
     wb = load_workbook('exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -32,6 +32,11 @@ def add_new_exel(surname, name, patranomic):
 
     input_cell(sheet, 'Z15', 'DN15', patranomic)
     input_cell(sheet3, 'AH35', 'DN35', patranomic)
+
+    input_cell(sheet, 'Z15', 'DN15', citizen)
+    input_cell(sheet3, 'AH35', 'DN35', citizen)
+
+    # birthdate
 
 
 
