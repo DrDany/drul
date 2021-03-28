@@ -72,54 +72,54 @@
 
       <div class="form-group">
           <label for="doc_date_field">Дата выдачи документа</label>
-          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-              <input id="doc_date_field" type="text" class="form-control" name="doc_date" placeholder="ДД-ММ-ГГГГ">#}
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
+              <input id="doc_date_field" type="text" class="form-control" name="doc_date" placeholder="ДД-ММ-ГГГГ">
               <div class="input-group-addon">
                   <span class="glyphicon glyphicon-th"></span>
-              </div>#}
-          </div>#}
-      </div>#}
-
-      <div class="form-group">#}
-          <label for="doc_end_field">Действителен ДО</label>#}
-          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-              <input id="doc_end_field" type="text" class="form-control" name="doc_end" placeholder="ДД-ММ-ГГГГ">#}
-              <div class="input-group-addon">#}
-                  <span class="glyphicon glyphicon-th"></span>#}
-              </div>#}
+              </div>
           </div>
       </div>
 
-     <div class="form-group">#}
-         <label for="profession_field">Профессия</label>#}
-         <input type="text" class="form-control" id="profession_field" name="profession">#}
-     </div>#}
+      <div class="form-group">
+          <label for="doc_end_field">Действителен ДО</label>
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
+              <input id="doc_end_field" type="text" class="form-control" name="doc_end" placeholder="ДД-ММ-ГГГГ">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
+      </div>
 
-      <div class="form-group">#}
-          <label for="date_income_field">Дата въезда</label>#}
-          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-              <input id="date_income_field" type="text" class="form-control" name="date_income"#}
-                     placeholder="ДД-ММ-ГГГГ">#}
-              <div class="input-group-addon">#}
-                  <span class="glyphicon glyphicon-th"></span>#}
-              </div>#}
-          </div>#}
-      </div>#}
-{##}
-      <h3>Миграционная карта</h3>#}
+     <div class="form-group">
+         <label for="profession_field">Профессия</label>
+         <input type="text" class="form-control" id="profession_field" name="profession">
+     </div>
 
-      <div class="form-group">#}
-          <label for="mig_card_ser_field">Серия</label>#}
-          <input type="text" class="form-control" id="mig_card_ser_field" name="mig_card_ser">#}
-      </div>#}
+      <div class="form-group">
+          <label for="date_income_field">Дата въезда</label>
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
+              <input id="date_income_field" type="text" class="form-control" name="date_income"
+                     placeholder="ДД-ММ-ГГГГ">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
+      </div>
+
+      <h3>Миграционная карта</h3>
+
+      <div class="form-group">
+          <label for="mig_card_ser_field">Серия</label>
+          <input type="text" class="form-control" id="mig_card_ser_field" name="mig_card_ser">
+      </div>
 
 
-      <div class="form-group">#}
-          <label for="mig_card_number_field">Номер</label>#}
-          <input type="text" class="form-control" id="mig_card_number_field" name="mig_card_number">#}
-      </div>#}
-{##}
-{##}
+      <div class="form-group">
+          <label for="mig_card_number_field">Номер</label>
+          <input type="text" class="form-control" id="mig_card_number_field" name="mig_card_number">
+      </div>
+{#
+{#
 {#        <div class="form-group">#}
 {#            <label for="mig_card_region_field">Город </label>#}
 {#            <input type="text" class="form-control" id="mig_card_region_field" name="mig_card_region">#}
@@ -171,18 +171,22 @@
 {##}
 {#        <h1>СТРАНИЦА 2</h1>#}
 
-{##}
-{#        <h3>2. СВЕДЕНИЯ О ПРИНИМАЩЕЙ СТОРОНЕ</h3>#}
-{#        <div class="form-group">#}
-{#            <label for="surname_host_field">Фамилия</label>#}
-{#            <input type="text" class="form-control" id="surname_host_field" name="surname_host">#}
-{#        </div>#}
-{#        <div class="form-group">#}
-{#            <label for="name_host_field">Имя Отчество (Через пробел)</label>#}
-{#            <input type="text" class="form-control" id="name_host_field" name="name_host">#}
-{#        </div>#}
-{##}
-{##}
+
+        <h3>3. СВЕДЕНИЯ О ПРИНИМАЩЕЙ СТОРОНЕ</h3>
+        <div class="form-group">
+            <label for="surname_host_field">Фамилия</label>
+            <input type="text" class="form-control" id="surname_host_field" name="surname_host">
+        </div>
+        <div class="form-group">
+            <label for="name_host_field">Имя</label>
+            <input type="text" class="form-control" id="name_host_field" name="name_host">
+        </div>
+            <div class="form-group">
+            <label for="patr_host_field">Отчество</label>
+            <input type="text" class="form-control" id="part_host_field" name="patr_host">
+        </div>
+
+
 {#        <div class="form-group">#}
 {#            <label for="date_income_field">Дата Рождения</label>#}
 {#            <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
@@ -193,55 +197,55 @@
 {#                </div>#}
 {#            </div>#}
 {#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="host_doc_seria_field">Серия</label>#}
-{#            <input type="text" class="form-control" id="host_doc_seria" name="host_doc_seria">#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="host_doc_number_field">Номер</label>#}
-{#            <input type="text" class="form-control" id="host_doc_number_field" name="host_doc_number">#}
-{#        </div>#}
-{##}
-{#        <div class="form-group">#}
-{#            <label for="date_income_field">Дата Выдачи паспорта</label>#}
-{#            <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">#}
-{#                <input id="date_host_pass" type="text" class="form-control" name="date_host_pass"#}
-{#                       placeholder="ДД-ММ-ГГГГ">#}
-{#                <div class="input-group-addon">#}
-{#                    <span class="glyphicon glyphicon-th"></span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-        {#       <div class="form-group">#}
-        {#           <label for="patronymic_field">Отчетство</label>#}
-        {#           <input type="text" class="form-control" id="patronymic_field" name="patronymic">#}
-        {#       </div>#}
-        {#       <div class="form-group">#}
-        {#           <label for="region_field">Откуда пес примчал</label>#}
-        {#           <select class="form-control" id="region_field" name="region">#}
-        {#               {% for region in regions %}#}
-        {#                   <option value="{{ region['id'] }}">{{ region['region'] }}</option>#}
-        {#               {% endfor %}#}
-        {#           </select>#}
-        {#       </div>#}
-        {#       <div class="form-group">#}
-        {#           <label for="city_field">Город</label>#}
-        {#           <select class="form-control" id="city_field" name="city"></select>#}
-        {#       </div>#}
-        {#       <div class="form-group">#}
-        {#           <label for="phone_field">Контактный телефон</label>#}
-        {#           <input type="text" class="form-control" id="phone_field" placeholder="(861)1124556" name="phone">#}
-        {#       </div>#}
-        {#       <div class="form-group">#}
-        {#           <label for="exampleFormControlInput1">E-mail</label>#}
-        {#           <input type="text" class="form-control" id="email_filed" placeholder="name@example.com" name="email">#}
-        {#       </div>#}
-        {#       <div class="form-group">#}
-        {#           <label for="comment_field">Комментарий</label>#}
-        {#           <textarea class="form-control" id="comment_field" rows="3" name="comment"></textarea>#}
-        {#       </div>#}
+
+        <div class="form-group">
+            <label for="host_doc_seria_field">Серия</label>
+            <input type="text" class="form-control" id="host_doc_seria" name="host_doc_seria">
+        </div>
+
+        <div class="form-group">
+            <label for="host_doc_number_field">Номер</label>
+            <input type="text" class="form-control" id="host_doc_number_field" name="host_doc_number">
+        </div>
+
+        <div class="form-group">
+            <label for="date_income_field">Дата Выдачи паспорта</label>
+            <div class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
+                <input id="date_host_pass" type="text" class="form-control" name="date_host_pass"
+                       placeholder="ДД-ММ-ГГГГ">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+        </div>
+{#               <div class="form-group">#}
+{#                   <label for="patronymic_field">Отчетство</label>#}
+{#                   <input type="text" class="form-control" id="patronymic_field" name="patronymic">#}
+{#               </div>#}
+{#               <div class="form-group">#}
+{#                   <label for="region_field">Откуда пес примчал</label>#}
+{#                   <select class="form-control" id="region_field" name="region">#}
+{#                       {% for region in regions %}#}
+{#                           <option value="{{ region['id'] }}">{{ region['region'] }}</option>#}
+{#                       {% endfor %}#}
+{#                   </select>#}
+{#               </div>#}
+{#               <div class="form-group">#}
+{#                   <label for="city_field">Город</label>#}
+{#                   <select class="form-control" id="city_field" name="city"></select>#}
+{#               </div>#}
+{#               <div class="form-group">#}
+{#                   <label for="phone_field">Контактный телефон</label>#}
+{#                   <input type="text" class="form-control" id="phone_field" placeholder="(861)1124556" name="phone">#}
+{#               </div>#}
+{#               <div class="form-group">#}
+{#                   <label for="exampleFormControlInput1">E-mail</label>#}
+{#                   <input type="text" class="form-control" id="email_filed" placeholder="name@example.com" name="email">#}
+{#               </div>#}
+{#               <div class="form-group">#}
+{#                   <label for="comment_field">Комментарий</label>#}
+{#                   <textarea class="form-control" id="comment_field" rows="3" name="comment"></textarea>#}
+{#               </div>#}
 
 
         <input type="submit" class="btn btn-success" value="Записать в Exel">

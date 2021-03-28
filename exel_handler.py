@@ -11,7 +11,7 @@ def input_cell(page, start_cell, end_cell, word):
         cell_index = cell_index + 4
 
 
-def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', gender='', doc_seria='', doc_number='', doc_date='', doc_end='', profession='', date_income='', mig_card_ser='', mig_card_number=''):
+def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', gender='', doc_seria='', doc_number='', doc_date='', doc_end='', profession='', date_income='', mig_card_ser='', mig_card_number='',surname_host='', name_host='', patr_host='', host_doc_seria='', host_doc_number='', date_host_pass=''):
     wb = load_workbook('exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -87,21 +87,21 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet3["I49"].value = doc_date[0]
     sheet3["M49"].value = doc_date[1]
     # month
-    sheet["AT30"].value = doc_date[3]
-    sheet["AX30"].value = doc_date[4]
+    sheet["Z30"].value = doc_date[3]
+    sheet["AD30"].value = doc_date[4]
 
     sheet3["Z49"].value = doc_date[3]
     sheet3["AD49"].value = doc_date[4]
 
-    sheet["BF30"].value = doc_date[6]
-    sheet["BJ30"].value = doc_date[7]
-    sheet["BN30"].value = doc_date[8]
-    sheet["BR30"].value = doc_date[9]
+    sheet["AL30"].value = doc_date[6]
+    sheet["AP30"].value = doc_date[7]
+    sheet["AT30"].value = doc_date[8]
+    sheet["AX30"].value = doc_date[9]
 
     # sheet3["AL49"].value = doc_date[6]
-    # sheet3["BG39"].value = doc_date[7]
-    # sheet3["BK39"].value = doc_date[8]
-    # sheet3["BO39"].value = doc_date[9]
+    # sheet3["AP39"].value = doc_date[7]
+    # sheet3["AT39"].value = doc_date[8]
+    # sheet3["AX39"].value = doc_date[9]
 
     # doc_end
 
@@ -112,15 +112,20 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet3["BR49"].value = doc_end[1]
     # month
     sheet["CD30"].value = doc_end[3]
-    sheet["CH3030"].value = doc_end[4]
+    sheet["CH30"].value = doc_end[4]
 
     sheet3["CD49"].value = doc_end[3]
     sheet3["CH49"].value = doc_end[4]
     #
-    # sheet["BF30"].value = doc_end[6]
-    # sheet["BJ30"].value = doc_end[7]
-    # sheet["BN30"].value = doc_end[8]
-    # sheet["BR30"].value = doc_end[9]
+    sheet["CP30"].value = doc_end[6]
+    sheet["CT30"].value = doc_end[7]
+    sheet["CX30"].value = doc_end[8]
+    sheet["DB30"].value = doc_end[9]
+
+    sheet3["CP49"].value = doc_end[6]
+    sheet3["CT49"].value = doc_end[7]
+    sheet3["CX49"].value = doc_end[8]
+    sheet3["DB49"].value = doc_end[9]
 
     input_cell(sheet, 'R44', 'DN44', profession)
 
@@ -130,8 +135,34 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet["Z46"].value = date_income[3]
     sheet["AD46"].value = date_income[4]
 
+    sheet["AL46"].value = date_income[6]
+    sheet["AP46"].value = date_income[7]
+    sheet["AT46"].value = date_income[8]
+    sheet["AX46"].value = date_income[9]
+
     input_cell(sheet, 'AP48', 'BB48', mig_card_ser)
     input_cell(sheet, 'BJ48', 'CX48', mig_card_number)
+
+    input_cell(sheet3, 'N5', 'DN5', surname_host)
+    input_cell(sheet4, 'N27', 'DN27', surname_host)
+    input_cell(sheet3, 'N7', 'DN7', name_host)
+    input_cell(sheet4, 'N29', 'DN29', name_host)
+    input_cell(sheet3, 'AH9', 'DN9', patr_host)
+    input_cell(sheet4, 'Z31', 'DN31', patr_host)
+
+    input_cell(sheet3, 'BF11', 'BR11', host_doc_seria)
+    input_cell(sheet3, 'BZ11', 'DN11', host_doc_number)
+
+    sheet3["I13"].value = date_host_pass[0]
+    sheet3["M13"].value = date_host_pass[1]
+
+    sheet3["Z13"].value = date_host_pass[3]
+    sheet3["AD13"].value = date_host_pass[4]
+
+    sheet3["AL13"].value = date_host_pass[6]
+    sheet3["AP13"].value = date_host_pass[7]
+    sheet3["AT13"].value = date_host_pass[8]
+    sheet3["AX13"].value = date_host_pass[9]
 
 
 
