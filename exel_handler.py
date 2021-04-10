@@ -98,11 +98,11 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet["AT30"].value = doc_date[8]
     sheet["AX30"].value = doc_date[9]
 
-    # sheet3["AL49"].value = doc_date[6]
-    # sheet3["AP39"].value = doc_date[7]
-    # sheet3["AT39"].value = doc_date[8]
-    # sheet3["AX39"].value = doc_date[9]
-
+    sheet3["AL49"].value = doc_date[6]
+    sheet3["AP49"].value = doc_date[7]
+    sheet3["AT49"].value = doc_date[8]
+    sheet3["AX49"].value = doc_date[9]
+    
     # doc_end
 
     sheet["BN30"].value = doc_end[0]
