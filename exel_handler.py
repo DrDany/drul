@@ -11,7 +11,10 @@ def input_cell(page, start_cell, end_cell, word):
         cell_index = cell_index + 4
 
 
-def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', gender='', doc_seria='', doc_number='', doc_date='', doc_end='', profession='', date_income='', mig_card_ser='', mig_card_number='',surname_host='', name_host='', patr_host='', host_doc_seria='', host_doc_number='', date_host_pass=''):
+def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', gender='', doc_seria='', doc_number='',
+                 doc_date='', doc_end='', profession='', date_income='', date_stay_to='', mig_card_ser='',
+                 mig_card_number='', surname_host='', name_host='', patr_host='', host_doc_seria='', host_doc_number='',
+                 date_host_pass=''):
     wb = load_workbook('exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -102,7 +105,7 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet3["AP49"].value = doc_date[7]
     sheet3["AT49"].value = doc_date[8]
     sheet3["AX49"].value = doc_date[9]
-    
+
     # doc_end
 
     sheet["BN30"].value = doc_end[0]
@@ -140,6 +143,28 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet["AT46"].value = date_income[8]
     sheet["AX46"].value = date_income[9]
 
+    sheet["BN46"].value = date_stay_to[0]
+    sheet["BR46"].value = date_stay_to[1]
+
+    sheet["CD46"].value = date_stay_to[3]
+    sheet["CH46"].value = date_stay_to[4]
+
+    sheet["CP46"].value = date_stay_to[6]
+    sheet["CT46"].value = date_stay_to[7]
+    sheet["CX46"].value = date_stay_to[8]
+    sheet["DB46"].value = date_stay_to[9]
+
+    sheet3["I68"].value = date_stay_to[0]
+    sheet3["M68"].value = date_stay_to[1]
+
+    sheet3["AA68"].value = date_stay_to[3]
+    sheet3["AE68"].value = date_stay_to[4]
+
+    sheet3["AM68"].value = date_stay_to[6]
+    sheet3["AQ68"].value = date_stay_to[7]
+    sheet3["AU68"].value = date_stay_to[8]
+    sheet3["AY68"].value = date_stay_to[9]
+
     input_cell(sheet, 'AP48', 'BB48', mig_card_ser)
     input_cell(sheet, 'BJ48', 'CX48', mig_card_number)
 
@@ -163,8 +188,5 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     sheet3["AP13"].value = date_host_pass[7]
     sheet3["AT13"].value = date_host_pass[8]
     sheet3["AX13"].value = date_host_pass[9]
-
-
-
 
     wb.save(file_name)
