@@ -16,7 +16,7 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
                  profession='', date_income='',
                  date_stay_to='', mig_card_ser='',
                  mig_card_number='', surname_host='', name_host='', patr_host='', host_doc_seria='', host_doc_number='',
-                 date_host_pass=''):
+                 date_host_pass='', str1='', str2='', str3='', str4=''):
     wb = load_workbook('exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
@@ -212,5 +212,10 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
         sheet3["AP13"].value = date_host_pass[7]
         sheet3["AT13"].value = date_host_pass[8]
         sheet3["AX13"].value = date_host_pass[9]
+
+    input_cell(sheet2, 'Z3', 'DN3', str1)
+    input_cell(sheet2, 'Z5', 'DN5', str2)
+    input_cell(sheet2, 'Z7', 'DN7', str3)
+    input_cell(sheet2, 'B9', 'DN9', str4)
 
     wb.save(file_name)

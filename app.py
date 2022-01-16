@@ -49,7 +49,12 @@ def comment():
         host_doc_seria = request.form["host_doc_seria"]
         host_doc_number = request.form["host_doc_number"]
         date_host_pass = request.form["date_host_pass"]
-        exel_handler.add_new_exel(surname, name, patranomic, citizen, birthdate, gender, doc_seria, doc_number, doc_date, doc_end, profession, date_income, date_stay_to, mig_card_ser, mig_card_number, surname_host, name_host, patr_host, host_doc_seria, host_doc_number, date_host_pass)
+
+        str1 = request.form["str1"]
+        str2 = request.form["str2"]
+        str3 = request.form["str3"]
+        str4 = request.form["str4"]
+        exel_handler.add_new_exel(surname, name, patranomic, citizen, birthdate, gender, doc_seria, doc_number, doc_date, doc_end, profession, date_income, date_stay_to, mig_card_ser, mig_card_number, surname_host, name_host, patr_host, host_doc_seria, host_doc_number, date_host_pass, str1, str2, str3, str4)
         return redirect(url_for('comment'))
 
 
