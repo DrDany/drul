@@ -12,7 +12,9 @@ def input_cell(page, start_cell, end_cell, word):
 
 
 def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', gender='', doc_seria='', doc_number='',
-                 doc_date='', doc_end='', profession='', date_income='', date_stay_to='', mig_card_ser='',
+                 doc_date='', doc_end='',
+                 profession='', date_income='',
+                 date_stay_to='', mig_card_ser='',
                  mig_card_number='', surname_host='', name_host='', patr_host='', host_doc_seria='', host_doc_number='',
                  date_host_pass=''):
     wb = load_workbook('exel.xlsx')
@@ -45,27 +47,31 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
 
     # birthdate
     # insert birth date
-    sheet["AD20"].value = birthdate[0]
-    sheet["AH20"].value = birthdate[1]
+    if not birthdate:
+        print("string empty")
 
-    sheet3["AA39"].value = birthdate[0]
-    sheet3["AE39"].value = birthdate[1]
-    # month
-    sheet["AT20"].value = birthdate[3]
-    sheet["AX20"].value = birthdate[4]
+    if birthdate:
+        sheet["AD20"].value = birthdate[0]
+        sheet["AH20"].value = birthdate[1]
 
-    sheet3["AQ39"].value = birthdate[3]
-    sheet3["AU39"].value = birthdate[4]
+        sheet3["AA39"].value = birthdate[0]
+        sheet3["AE39"].value = birthdate[1]
+        # month
+        sheet["AT20"].value = birthdate[3]
+        sheet["AX20"].value = birthdate[4]
 
-    sheet["BF20"].value = birthdate[6]
-    sheet["BJ20"].value = birthdate[7]
-    sheet["BN20"].value = birthdate[8]
-    sheet["BR20"].value = birthdate[9]
+        sheet3["AQ39"].value = birthdate[3]
+        sheet3["AU39"].value = birthdate[4]
 
-    sheet3["BC39"].value = birthdate[6]
-    sheet3["BG39"].value = birthdate[7]
-    sheet3["BK39"].value = birthdate[8]
-    sheet3["BO39"].value = birthdate[9]
+        sheet["BF20"].value = birthdate[6]
+        sheet["BJ20"].value = birthdate[7]
+        sheet["BN20"].value = birthdate[8]
+        sheet["BR20"].value = birthdate[9]
+
+        sheet3["BC39"].value = birthdate[6]
+        sheet3["BG39"].value = birthdate[7]
+        sheet3["BK39"].value = birthdate[8]
+        sheet3["BO39"].value = birthdate[9]
 
     if gender == "female":
         sheet['DB20'] = 'X'
@@ -83,87 +89,102 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     input_cell(sheet, 'BZ28', 'DN28', doc_number)
     input_cell(sheet3, 'BZ47', 'DN47', doc_number)
 
+    if not doc_date:
+        print("string empty")
+
+    if doc_date:
     # doc_date
-    sheet["I30"].value = doc_date[0]
-    sheet["M30"].value = doc_date[1]
+        sheet["I30"].value = doc_date[0]
+        sheet["M30"].value = doc_date[1]
 
-    sheet3["I49"].value = doc_date[0]
-    sheet3["M49"].value = doc_date[1]
-    # month
-    sheet["Z30"].value = doc_date[3]
-    sheet["AD30"].value = doc_date[4]
+        sheet3["I49"].value = doc_date[0]
+        sheet3["M49"].value = doc_date[1]
+        # month
+        sheet["Z30"].value = doc_date[3]
+        sheet["AD30"].value = doc_date[4]
 
-    sheet3["Z49"].value = doc_date[3]
-    sheet3["AD49"].value = doc_date[4]
+        sheet3["Z49"].value = doc_date[3]
+        sheet3["AD49"].value = doc_date[4]
 
-    sheet["AL30"].value = doc_date[6]
-    sheet["AP30"].value = doc_date[7]
-    sheet["AT30"].value = doc_date[8]
-    sheet["AX30"].value = doc_date[9]
+        sheet["AL30"].value = doc_date[6]
+        sheet["AP30"].value = doc_date[7]
+        sheet["AT30"].value = doc_date[8]
+        sheet["AX30"].value = doc_date[9]
 
-    sheet3["AL49"].value = doc_date[6]
-    sheet3["AP49"].value = doc_date[7]
-    sheet3["AT49"].value = doc_date[8]
-    sheet3["AX49"].value = doc_date[9]
+        sheet3["AL49"].value = doc_date[6]
+        sheet3["AP49"].value = doc_date[7]
+        sheet3["AT49"].value = doc_date[8]
+        sheet3["AX49"].value = doc_date[9]
 
     # doc_end
 
-    sheet["BN30"].value = doc_end[0]
-    sheet["BR30"].value = doc_end[1]
+    if not doc_end:
+        print("string empty")
 
-    sheet3["BN49"].value = doc_end[0]
-    sheet3["BR49"].value = doc_end[1]
-    # month
-    sheet["CD30"].value = doc_end[3]
-    sheet["CH30"].value = doc_end[4]
+    if doc_end:
+        sheet["BN30"].value = doc_end[0]
+        sheet["BR30"].value = doc_end[1]
 
-    sheet3["CD49"].value = doc_end[3]
-    sheet3["CH49"].value = doc_end[4]
-    #
-    sheet["CP30"].value = doc_end[6]
-    sheet["CT30"].value = doc_end[7]
-    sheet["CX30"].value = doc_end[8]
-    sheet["DB30"].value = doc_end[9]
+        sheet3["BN49"].value = doc_end[0]
+        sheet3["BR49"].value = doc_end[1]
+        # month
+        sheet["CD30"].value = doc_end[3]
+        sheet["CH30"].value = doc_end[4]
 
-    sheet3["CP49"].value = doc_end[6]
-    sheet3["CT49"].value = doc_end[7]
-    sheet3["CX49"].value = doc_end[8]
-    sheet3["DB49"].value = doc_end[9]
+        sheet3["CD49"].value = doc_end[3]
+        sheet3["CH49"].value = doc_end[4]
+        #
+        sheet["CP30"].value = doc_end[6]
+        sheet["CT30"].value = doc_end[7]
+        sheet["CX30"].value = doc_end[8]
+        sheet["DB30"].value = doc_end[9]
+
+        sheet3["CP49"].value = doc_end[6]
+        sheet3["CT49"].value = doc_end[7]
+        sheet3["CX49"].value = doc_end[8]
+        sheet3["DB49"].value = doc_end[9]
 
     input_cell(sheet, 'R44', 'DN44', profession)
 
-    sheet["I46"].value = date_income[0]
-    sheet["M46"].value = date_income[1]
+    if not date_income:
+        print("string empty")
 
-    sheet["Z46"].value = date_income[3]
-    sheet["AD46"].value = date_income[4]
+    if date_income:
+        sheet["I46"].value = date_income[0]
+        sheet["M46"].value = date_income[1]
 
-    sheet["AL46"].value = date_income[6]
-    sheet["AP46"].value = date_income[7]
-    sheet["AT46"].value = date_income[8]
-    sheet["AX46"].value = date_income[9]
+        sheet["Z46"].value = date_income[3]
+        sheet["AD46"].value = date_income[4]
 
-    sheet["BN46"].value = date_stay_to[0]
-    sheet["BR46"].value = date_stay_to[1]
+        sheet["AL46"].value = date_income[6]
+        sheet["AP46"].value = date_income[7]
+        sheet["AT46"].value = date_income[8]
+        sheet["AX46"].value = date_income[9]
 
-    sheet["CD46"].value = date_stay_to[3]
-    sheet["CH46"].value = date_stay_to[4]
+    if not date_stay_to:
+        print("string empty")
+    if date_stay_to:
+        sheet["BN46"].value = date_stay_to[0]
+        sheet["BR46"].value = date_stay_to[1]
 
-    sheet["CP46"].value = date_stay_to[6]
-    sheet["CT46"].value = date_stay_to[7]
-    sheet["CX46"].value = date_stay_to[8]
-    sheet["DB46"].value = date_stay_to[9]
+        sheet["CD46"].value = date_stay_to[3]
+        sheet["CH46"].value = date_stay_to[4]
 
-    sheet3["I68"].value = date_stay_to[0]
-    sheet3["M68"].value = date_stay_to[1]
+        sheet["CP46"].value = date_stay_to[6]
+        sheet["CT46"].value = date_stay_to[7]
+        sheet["CX46"].value = date_stay_to[8]
+        sheet["DB46"].value = date_stay_to[9]
 
-    sheet3["AA68"].value = date_stay_to[3]
-    sheet3["AE68"].value = date_stay_to[4]
+        sheet3["I68"].value = date_stay_to[0]
+        sheet3["M68"].value = date_stay_to[1]
 
-    sheet3["AM68"].value = date_stay_to[6]
-    sheet3["AQ68"].value = date_stay_to[7]
-    sheet3["AU68"].value = date_stay_to[8]
-    sheet3["AY68"].value = date_stay_to[9]
+        sheet3["AA68"].value = date_stay_to[3]
+        sheet3["AE68"].value = date_stay_to[4]
+
+        sheet3["AM68"].value = date_stay_to[6]
+        sheet3["AQ68"].value = date_stay_to[7]
+        sheet3["AU68"].value = date_stay_to[8]
+        sheet3["AY68"].value = date_stay_to[9]
 
     input_cell(sheet, 'AP48', 'BB48', mig_card_ser)
     input_cell(sheet, 'BJ48', 'CX48', mig_card_number)
@@ -178,15 +199,18 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
     input_cell(sheet3, 'BF11', 'BR11', host_doc_seria)
     input_cell(sheet3, 'BZ11', 'DN11', host_doc_number)
 
-    sheet3["I13"].value = date_host_pass[0]
-    sheet3["M13"].value = date_host_pass[1]
+    if not date_host_pass:
+        print("string empty")
+    if date_host_pass:
+        sheet3["I13"].value = date_host_pass[0]
+        sheet3["M13"].value = date_host_pass[1]
 
-    sheet3["Z13"].value = date_host_pass[3]
-    sheet3["AD13"].value = date_host_pass[4]
+        sheet3["Z13"].value = date_host_pass[3]
+        sheet3["AD13"].value = date_host_pass[4]
 
-    sheet3["AL13"].value = date_host_pass[6]
-    sheet3["AP13"].value = date_host_pass[7]
-    sheet3["AT13"].value = date_host_pass[8]
-    sheet3["AX13"].value = date_host_pass[9]
+        sheet3["AL13"].value = date_host_pass[6]
+        sheet3["AP13"].value = date_host_pass[7]
+        sheet3["AT13"].value = date_host_pass[8]
+        sheet3["AX13"].value = date_host_pass[9]
 
     wb.save(file_name)
