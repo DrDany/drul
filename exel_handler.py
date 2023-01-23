@@ -17,7 +17,7 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
                  date_stay_to='', mig_card_ser='',
                  mig_card_number='', surname_host='', name_host='', patr_host='', host_doc_seria='', host_doc_number='',
                  date_host_pass='', str1='', str2='', str3='', str4=''):
-    wb = load_workbook(filename = 'exel1.xlsx')
+    wb = load_workbook(filename = 'exel.xlsx')
     sheet = wb.get_sheet_by_name('стр.1')
     sheet2 = wb.get_sheet_by_name('стр.2')
     sheet3 = wb.get_sheet_by_name('стр.3')
@@ -100,8 +100,8 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
         sheet3["I49"].value = doc_date[0]
         sheet3["M49"].value = doc_date[1]
         # month
-        sheet["Z33"].value = doc_date[3]
-        sheet["AD33"].value = doc_date[4]
+        sheet["Z31"].value = doc_date[3]
+        sheet["AD31"].value = doc_date[4]
 
         sheet3["Z49"].value = doc_date[3]
         sheet3["AD49"].value = doc_date[4]
@@ -150,30 +150,30 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
         print("string empty")
 
     if date_income:
-        sheet["I50"].value = date_income[0]
-        sheet["M50"].value = date_income[1]
+        sheet["K50"].value = date_income[0]
+        sheet["O50"].value = date_income[1]
 
-        sheet["Z50"].value = date_income[3]
-        sheet["AD50"].value = date_income[4]
+        sheet["AB50"].value = date_income[3]
+        sheet["AF50"].value = date_income[4]
 
-        sheet["AL50"].value = date_income[6]
-        sheet["AP50"].value = date_income[7]
-        sheet["AT50"].value = date_income[8]
-        sheet["AX50"].value = date_income[9]
+        sheet["AN50"].value = date_income[6]
+        sheet["AR50"].value = date_income[7]
+        sheet["AV50"].value = date_income[8]
+        sheet["AZ50"].value = date_income[9]
 
     if not date_stay_to:
         print("string empty")
     if date_stay_to:
-        sheet["BN50"].value = date_stay_to[0]
-        sheet["BR50"].value = date_stay_to[1]
+        sheet["BP50"].value = date_stay_to[0]
+        sheet["BT50"].value = date_stay_to[1]
 
-        sheet["CD50"].value = date_stay_to[3]
-        sheet["CH50"].value = date_stay_to[4]
+        sheet["CF50"].value = date_stay_to[3]
+        sheet["CJ50"].value = date_stay_to[4]
 
-        sheet["CP50"].value = date_stay_to[6]
-        sheet["CT50"].value = date_stay_to[7]
-        sheet["CX50"].value = date_stay_to[8]
-        sheet["DB50"].value = date_stay_to[9]
+        sheet["CR50"].value = date_stay_to[6]
+        sheet["CV50"].value = date_stay_to[7]
+        sheet["CZ50"].value = date_stay_to[8]
+        sheet["DD50"].value = date_stay_to[9]
 
         sheet3["I68"].value = date_stay_to[0]
         sheet3["M68"].value = date_stay_to[1]
@@ -186,8 +186,8 @@ def add_new_exel(surname='', name='', patranomic='', citizen='', birthdate='', g
         sheet3["AU68"].value = date_stay_to[8]
         sheet3["AY68"].value = date_stay_to[9]
 
-    input_cell(sheet, 'AP52', 'BB52', mig_card_ser)
-    input_cell(sheet, 'BJ52', 'CX48', mig_card_number)
+    input_cell(sheet, 'AR52', 'BD52', mig_card_ser)
+    input_cell(sheet, 'BL52', 'CZ52', mig_card_number)
 
     input_cell(sheet3, 'N5', 'DN5', surname_host)
     input_cell(sheet4, 'N27', 'DN27', surname_host)
